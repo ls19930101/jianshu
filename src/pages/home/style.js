@@ -171,6 +171,10 @@ line-height:20px;
     margin-top:5px;
     font-size:13px;
     color:#42c02e;
+    text-decoration:none;
+    .iconfont{
+        font-size:14px;
+    }
 }
 .name{
     padding-top:5px;
@@ -186,5 +190,6 @@ line-height:20px;
     font-size:12px;
     color:#969696;
     margin:0 0 10px;
+   
 }
 `

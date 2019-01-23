@@ -1,8 +1,6 @@
 import {constants} from './index';
 import {fromJS} from 'immutable';
 
-
-
 export const changeList=(data)=>({
      type:constants.CHANGE_LIST,
      data:fromJS(data),
