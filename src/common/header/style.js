@@ -101,8 +101,6 @@ top:56px;
 padding:20px 20px 10px 20px;
 box-shadow:0 0 8px rgba(0,0,0,.2);
 `
-
-
 export const SearchInfoTitle=styled.div`
 margin-bottom:15px;
 font-size:14px;
@@ -117,7 +115,6 @@ cursor:pointer;
     margin-right:2px;
 }
 `
-
 export const SearchInfoList=styled.div`
 overflow:hidden;
 `
