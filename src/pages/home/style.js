@@ -30,8 +30,6 @@ margin-bottom:15px;
 border-bottom:1px solid #f0f0f0;
 box-sizing:border-box;
 .pic{
-   
-    
     float:right;
     margin-top:20px;
     width:150px;
@@ -103,35 +101,35 @@ box-sizing:border-box;
 }
 `
 
-export const DownloadWrapper=styled.a`
-cursor:pointer;
+export const DownloadWrapper=styled.div`
+overflow:hidden;
 float:left;
-width:100%;
-box-sizing:border-box;
+cursor:pointer;
+width:280px;
+display:flex;
+padding:10px 20px;
 margin-bottom:30px;
-padding:10px 22px;
+box-sizing:border-box;
 border:1px solid #f0f0f0;
 border-radius:6px;
-vertical-align:top;
 .qrcode{
+
     width:60px;
     height:60px;
     opacity:.85;
 }
 `
 export const DownloadInfo=styled.div`
-overflow-hidden;
 display:inline-block;
-margin-left:7px;
+margin:auto 7px;
 line-height:1.42857;
-vertical-align:top;
 .title{
     font-size:15px;
     color:#333;
 }
 .desc{
-    margin-top:4px;
     font-size:13px;
+    margin-top:4px;
     color:#999;
 }
 `
@@ -156,8 +154,37 @@ cursor:pointer;
 `
 
 export const WritersInfoList=styled.div`
-
+margin:0 0 20px;
 `
 export const WritersInfoItem=styled.div`
-
+margin-top:15px;
+line-height:20px;
+.user{
+    float:left;
+    width:48px;
+    height:48px;
+    margin-right:10px;
+    border-radius:24px;
+}
+.follow{
+    float:right;
+    margin-top:5px;
+    font-size:13px;
+    color:#42c02e;
+}
+.name{
+    padding-top:5px;
+    margin-right:60px;
+    font-size:14px;
+    color:#333;
+    cursor:pointer;
+    display:block;
+    text-decoration:none;
+}
+.writerinfo{
+    margin-top:2px;
+    font-size:12px;
+    color:#969696;
+    margin:0 0 10px;
+}
 `
