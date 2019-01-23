@@ -144,6 +144,7 @@ height:60px;
 export const WritersInfoTitle=styled.span`
 font-size:14px;
 color:#969696;
+
 `
 export const WritersInfoSwitch=styled.a`
 float:right;
