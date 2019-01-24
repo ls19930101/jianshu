@@ -14,7 +14,7 @@ export const changeHomeInfo=(result)=>({
 
 export const loadMoreInfo=()=>({
     type:constants.LOAD_MORE_INFO,
-    listPage
+    // listPage
 })
 
 // axios.get('/api/home.json').then((res)=>{
