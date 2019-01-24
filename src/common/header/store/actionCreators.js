@@ -1,12 +1,6 @@
 import {constants} from './index';
 import {fromJS} from 'immutable';
 
-export const changeList=(data)=>({
-     type:constants.CHANGE_LIST,
-     data:fromJS(data),
-     totalPage:Math.ceil(data.length/10)
-})
-
 export const getSearchFocused=()=>({
      type:constants.SET_FOCUSED,
 })
@@ -18,6 +12,12 @@ export const getSearchBlur=()=>({
 
 export const getList=()=>({
      type:constants.GET_LIST,
+})
+
+export const changeList=(data)=>({
+     type:constants.CHANGE_LIST,
+     data:fromJS(data),
+     totalPage:Math.ceil(data.length/10)
 })
 
 export const getMouthIn=()=>({

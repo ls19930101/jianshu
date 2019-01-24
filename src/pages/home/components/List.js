@@ -4,13 +4,15 @@ import {
         ListInfo,
         ListLine,
         ListAciton,
+        LoadMore
 } from '../style';
 import {connect} from 'react-redux';
+import { dispatch } from 'rxjs/internal/observable/range';
 
 
 class List extends Component{
     render(){
-        const {list}=this.props;
+        const {list,handleLoadMore}=this.props;
         return (
             <div>    
                 <ListLine/>
@@ -36,6 +38,7 @@ class List extends Component{
                        ) 
                     })
                 }
+                <LoadMore onClick={handleLoadMore}>阅读更多</LoadMore>
             </div>
             
         )
@@ -45,4 +48,11 @@ class List extends Component{
 const mapStateToProps=(state)=>({
     list:state.getIn(['home','articleList'])
 })
-export default connect(mapStateToProps)(List);
+
+const mapDispatchToProps=(dispatch)=>({
+        handleLoadMore(){
+            
+        }
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(List);

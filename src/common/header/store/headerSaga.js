@@ -1,6 +1,5 @@
 import {  put, takeEvery } from 'redux-saga/effects';
 import {constants,actionCreators} from './index';
-
 import axios from 'axios';
 
 function* getList(action){
