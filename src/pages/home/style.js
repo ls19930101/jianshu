@@ -23,7 +23,21 @@ width:280px;
 margin-left:40px;
 padding:30px 0 0;
 `
+export const BackTop=styled.div`
+position:fixed;
+right:60px;
+bottom:60px;
+width:50px;
+height:50px;
+text-align:center;
+font-size:13px;
+line-height:50px;
+cursor:pointer;
+border:1px solid #dcdcdc;
+background:#fff;
 
+
+`
 
 export const ListItem=styled.div`
 overflow:hidden;
@@ -53,7 +67,6 @@ margin-right:15px;
 font-size:13px;
 line-height:24px;
 color:#999;
-
 .title{
     margin:-7px 0 4px;
     font-size:18px;
@@ -61,6 +74,7 @@ color:#999;
     line-height:1.5;
     color:#333;
     display: inherit;
+    text-decoration:none;
 }
 .desc{
     line-height:24px;

@@ -7,26 +7,26 @@ import {
         LoadMore
 } from '../style';
 import {connect} from 'react-redux';
-import { dispatch } from 'rxjs/internal/observable/range';
+import { actionCreators } from '../store';
 
 
 class List extends Component{
     render(){
-        const {list,handleLoadMore}=this.props;
+        const {list,handleLoadMore,page}=this.props;
         return (
             <div>    
                 <ListLine/>
                 {
-                    list.map((item)=>{
+                    list.map((item,index)=>{
                        return(
-                        <ListItem key={item.get('id')}>
+                        <ListItem key={index}>
                             <img 
                                 className="pic" 
                                 alt= "" 
                                 src={item.get('imgUrl')}
                             />
                             <ListInfo>
-                                <h3 className="title">{item.get('title')}</h3>
+                                <a className="title"  href="./detail">{item.get('title')}</a>
                                 <p className="desc">{item.get('desc')}</p>
                                 <ListAciton>
                                 <a className="action" href="/">{item.get('writer')}</a>
@@ -38,7 +38,7 @@ class List extends Component{
                        ) 
                     })
                 }
-                <LoadMore onClick={handleLoadMore}>阅读更多</LoadMore>
+                <LoadMore onClick={()=>handleLoadMore(page)}>阅读更多</LoadMore>
             </div>
             
         )
@@ -46,12 +46,14 @@ class List extends Component{
 }
 
 const mapStateToProps=(state)=>({
-    list:state.getIn(['home','articleList'])
+    list:state.getIn(['home','articleList']),
+    page:state.getIn(['home','articlePage'])
 })
 
 const mapDispatchToProps=(dispatch)=>({
-        handleLoadMore(){
-            
+        handleLoadMore(page){
+            const action=actionCreators.loadMoreInfo(page);
+            dispatch(action);
         }
 })
 
