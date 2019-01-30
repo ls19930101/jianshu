@@ -1,4 +1,4 @@
-import React ,{Component} from 'react';
+import React ,{PureComponent} from 'react';
 import {HeaderWrapper,
         Logo,
         Nav,
@@ -17,8 +17,9 @@ import { IconGlobal } from '../../statics/iconfont/iconfont';
 import {connect} from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { actionCreators } from './store';
+import {Link} from 'react-router-dom';
 
-class Header extends Component{
+class Header extends PureComponent{
 
     getListArea(){
         const {focused,list,mouthIn,handMouthIn,handMouthLeave,handlePageChange,page,totalPage}=this.props;
@@ -56,7 +57,9 @@ class Header extends Component{
         const {focused,handleSearchBlur,HandleSearchFocus,list} =this.props;
         return (
             <HeaderWrapper>
-                 <Logo href='/'/> 
+                <Link to="/">
+                <Logo/> 
+                </Link>
                  <Nav>
                     <IconGlobal/>
                         <NavItem className='left active'>首页</NavItem>

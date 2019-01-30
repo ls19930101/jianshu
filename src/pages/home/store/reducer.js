@@ -20,6 +20,7 @@ export default (state=defaultState,action)=>{
         )
         
         case constants.CHANGE_MORE_INFO:
+      
         return state.merge({
             articleList:state.get('articleList').concat(fromJS(action.list)),
             articlePage:action.nextPage

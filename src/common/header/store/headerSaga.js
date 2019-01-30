@@ -1,10 +1,11 @@
 import {  put, takeEvery } from 'redux-saga/effects';
 import {constants,actionCreators} from './index';
+
 import axios from 'axios';
 
 function* getList(action){
     try{
-       const res= yield axios.get('api/headerList.json');
+       const res= yield axios.get('/api/headerList.json');
        const data=res.data;
       const action=actionCreators.changeList(data.data);
         yield put(action);

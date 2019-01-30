@@ -15,7 +15,8 @@ export const changeHomeInfo=(result)=>({
 
 export const loadMoreInfo=(page)=>({
     type:constants.LOAD_MORE_INFO,
-    page
+    page,
+    
 })
 
 export const changeMoreInfo=(list,nextPage)=>({

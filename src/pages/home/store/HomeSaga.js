@@ -3,11 +3,11 @@ import {constants,actionCreators} from './index';
 import axios from 'axios';
 
 
-function* getHomeInfo(action){
+function* getHomeInfo(){
     try{
-       const res= yield axios.get('api/home.json');
+        
+       const res= yield axios.get('/api/home.json');
        const result=res.data.data;
-       console.log(result);
        const action=actionCreators.changeHomeInfo(result);
         yield put(action);
     }catch(e){
@@ -17,10 +17,11 @@ function* getHomeInfo(action){
 
 function* loadMoreInfo(page){
     try{
-        const res= yield axios.get('api/homeList.json?page='+page);
+        // console.log(page.page);
+        const res= yield axios.get('api/homeList.json?page='+page.page);
         const more=res.data.data;
-        console.log(more);
-        const action=actionCreators.changeMoreInfo(more,page+1);
+        console.log(more,page);
+        const action=actionCreators.changeMoreInfo(more,page.page+1);
         yield put(action);
     }catch(e){
         alert('网络异常，请重新获取');

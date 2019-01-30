@@ -35,51 +35,56 @@ line-height:50px;
 cursor:pointer;
 border:1px solid #dcdcdc;
 background:#fff;
-
-
-`
-
-export const ListItem=styled.div`
-overflow:hidden;
-float:left;
-padding:15px 2px 20px 0;
-margin-bottom:15px;
-border-bottom:1px solid #f0f0f0;
-box-sizing:border-box;
-.pic{
-    float:right;
-    margin-top:20px;
-    width:150px;
-    height:100px; 
-    border-radius:4px;
-}
 `
 export const ListLine=styled.div`
 margin:-5px 0 15px;
 border-top:1px solid #f0f0f0;
 `
+export const ListItem=styled.div`
+float:left;
+position:relative;
+padding:15px 2px 20px 0;
+margin-bottom:15px;
+border-bottom:1px solid #f0f0f0;
+box-sizing:border-box;
+word-wrap:break-word;
+`
+export const InfoPic=styled.div`
+position:absolute;
+top:50%;
+right:0;
+width:150px;
+height:100px; 
+margin-top:-60px;
+cursor:pointer;
+.pic{
+    width:100%;
+    height:100%;
+    border-radius:4px;
+}
+
+`
+
 
 export const ListInfo=styled.div`
 float:left;
-display:block;
-width:458px;
-margin-right:15px;
-font-size:13px;
-line-height:24px;
-color:#999;
+padding-right:165px;
+vertical-align:middle;
+box-sizing:border-box;
 .title{
-    margin:-7px 0 4px;
+    margin:0 0 4px;
     font-size:18px;
     font-weight:700;
     line-height:1.5;
     color:#333;
-    display: inherit;
+    display:block;
     text-decoration:none;
 }
 .desc{
     line-height:24px;
     font-size:13px;
     margin:0 0 8px;
+    color:#999; 
 }
 `
 

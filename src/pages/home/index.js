@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import {HomeWrapper,
         HomeLeft,
         HomeRight, 
@@ -11,7 +11,7 @@ import Writers from './components/Writers';
 import Download from './components/Download';
 import {actionCreators} from './store';
 
-class Home extends Component{
+class Home extends PureComponent{
     render(){
         const {handleScrollTop,showScrollTop}=this.props;
         return (

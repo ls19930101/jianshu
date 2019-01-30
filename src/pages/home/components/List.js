@@ -1,6 +1,7 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import {
         ListItem,
+        InfoPic,
         ListInfo,
         ListLine,
         ListAciton,
@@ -8,10 +9,12 @@ import {
 } from '../style';
 import {connect} from 'react-redux';
 import { actionCreators } from '../store';
+import {Link} from 'react-router-dom';
 
 
-class List extends Component{
+class List extends PureComponent{
     render(){
+        // console.log(this.props);
         const {list,handleLoadMore,page}=this.props;
         return (
             <div>    
@@ -19,22 +22,26 @@ class List extends Component{
                 {
                     list.map((item,index)=>{
                        return(
-                        <ListItem key={index}>
-                            <img 
-                                className="pic" 
-                                alt= "" 
-                                src={item.get('imgUrl')}
-                            />
-                            <ListInfo>
-                                <a className="title"  href="./detail">{item.get('title')}</a>
-                                <p className="desc">{item.get('desc')}</p>
-                                <ListAciton>
-                                <a className="action" href="/">{item.get('writer')}</a>
-                                <a className="action" href="/detail"><span className="iconfont">&#xe684;</span>{item.get('commend')}</a>
-                                <span className="action"><span className="iconfont">&#xe65c;</span>{item.get('praise')}</span>
-                                </ListAciton>
-                            </ListInfo>
-                        </ListItem>
+                            <ListItem key={index}>
+                                <Link  to={"/detail/"+item.get('id')}>
+                                <InfoPic>
+                                <img className="pic" 
+                                    alt= "" 
+                                    src={item.get('imgUrl')}/>
+                                </InfoPic> 
+                                </Link>
+                                <ListInfo>
+                                     <Link className="title"  key={index} to={'/detail/'+item.get('id')}>{item.get('title')}</Link>
+                                    <p className="desc">{item.get('desc')}</p>
+                                    <ListAciton>
+                                    <Link className="action" to="/">{item.get('writer')}</Link>
+                                    <Link className="action" to="/detail"><span className="iconfont">&#xe684;</span>{item.get('commend')}</Link>
+                                    <span className="action"><span className="iconfont">&#xe65c;</span>{item.get('praise')}</span>
+                                    </ListAciton>
+                                </ListInfo>
+                             </ListItem>
+                      
+                    
                        ) 
                     })
                 }
@@ -47,12 +54,13 @@ class List extends Component{
 
 const mapStateToProps=(state)=>({
     list:state.getIn(['home','articleList']),
-    page:state.getIn(['home','articlePage'])
+   page:state.getIn(['home','articlePage'])
 })
 
 const mapDispatchToProps=(dispatch)=>({
         handleLoadMore(page){
             const action=actionCreators.loadMoreInfo(page);
+            // console.log(page);
             dispatch(action);
         }
 })

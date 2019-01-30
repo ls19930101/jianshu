@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import {
     RecommendsWrapper,
     RecommendsItem,
@@ -6,7 +6,7 @@ import {
 } from '../style'
 import {connect} from 'react-redux';
 
-class Recommends extends Component{
+class Recommends extends PureComponent{
     render(){
         const {list}=this.props;
         return (
@@ -28,4 +28,4 @@ const mapStateToprops=(state)=>({
     list:state.getIn(['home','recommendsList'])
 })
 
-export default connect(mapStateToprops)(Recommends);
+export default connect(mapStateToprops,null)(Recommends);

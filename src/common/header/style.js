@@ -6,13 +6,14 @@ positon:relative;
 height:56px;
 border-bottom:1px solid #f0f0f0;
 `
-export const Logo=styled.a`
+export const Logo=styled.div`
 position:absolute; 
 top:0;
 left:0;
 display:block;
 width:100px;
 height:56px;
+cursor:pointer;
 background:url(${logoPic});
 background-size:contain;
 `
