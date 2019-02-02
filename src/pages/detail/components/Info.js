@@ -4,16 +4,17 @@ import {InfoWrapper,
         InfoTitle,
         WriterInfo,
         AvatarPic,
-        PaperList
+        Content
 } from '../style'; 
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 class Info extends PureComponent{
     render(){
+        const {title,content}=this.props;
       return (
           <InfoWrapper>
-              <InfoTitle>{this.props.title}</InfoTitle>
+              <InfoTitle>{title}</InfoTitle>
               <WriterWrapper>
                   <Link to="/">
                     <AvatarPic>
@@ -37,14 +38,15 @@ class Info extends PureComponent{
                     </div>
                 </WriterInfo>
               </WriterWrapper>
-              <PaperList/>
+              <Content dangerouslySetInnerHTML={{__html:content}}></Content>
           </InfoWrapper>
       )
     }
 }
 
  const mapStateToProps=(state)=>({
-    title:state.getIn(['detail','title'])
+    title:state.getIn(['detail','title']),
+    content:state.getIn(['detail','content'])
 })
 
 export default connect(mapStateToProps,null)(Info);

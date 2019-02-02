@@ -80,26 +80,49 @@ line-height:1.42857;
 
 `
 export const QrcodeWrapper=styled.div`
+
+box-sizing:border-box;
 position:fixed;
 top:80px;
-right:150px;
+right:50%;
+margin-right:-550px;
 `
-export const PaperList=styled.div`
-
+export const Content=styled.div`
+color:#2f2f2f;
+font-size:16px;
+font-weight:400;
+line-height:1.7;
+p{
+    margin:25px 0 ;
+}
+img{
+    width:100%;
+}
 `
 
 export const AppPic=styled.div`
 background:url(${appPic});
-display:block;
+display:inline-block;
 height:260px;
 width:180px;
 background-size:contain;
+
+
+`
+
+export const CloseBtn=styled.div`
+position:absolute;
+z-index:2;
+display:inline-block;
+top:10px;
+right:10px;
+cursor:pointer;
 .iconfont{
-    position:absolute;
-    top:10px;
-    right:10px;
     font-size:14px;
+    color:#000;
+    // opacity:.2;
+}
+.hover{
     color:#999;
 }
-
 `

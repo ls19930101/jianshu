@@ -4,6 +4,7 @@ import reducer from './reducer';
 import headerSaga from '../common/header/store/headerSaga';
 import homeSaga from '../pages/home/store/HomeSaga';
 import detailSaga from '../pages/detail/store/detailSaga';
+import loginSaga from '..//pages/login/store/loginSaga'
 
 const composeEnhancers =window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
@@ -16,5 +17,6 @@ const store=createStore(reducer,enhancer);
 sagaMiddleware.run(headerSaga);
 sagaMiddleware.run(homeSaga);
 sagaMiddleware.run(detailSaga);
+sagaMiddleware.run(loginSaga);
 
 export default store;

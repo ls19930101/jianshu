@@ -18,6 +18,7 @@ import {connect} from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { actionCreators } from './store';
 import {Link} from 'react-router-dom';
+import { actionCreators as loginActionCreators } from '../../pages/login/store'
 
 class Header extends PureComponent{
 
@@ -54,7 +55,7 @@ class Header extends PureComponent{
     }
 
     render(){
-        const {focused,handleSearchBlur,HandleSearchFocus,list} =this.props;
+        const {focused,handleSearchBlur,HandleSearchFocus,list,loginState,loginOut} =this.props;
         return (
             <HeaderWrapper>
                 <Link to="/">
@@ -65,7 +66,14 @@ class Header extends PureComponent{
                         <NavItem className='left active'>首页</NavItem>
                         <NavItem className='left'>下载App</NavItem>
                         <NavItem className='right'><span className  ="iconfont">&#xe636;</span></NavItem>
-                        <NavItem className='right'>登录</NavItem>
+                      {!loginState? 
+                        <Link to="/login">
+                         <NavItem className='right'>登录</NavItem>
+                        </Link>
+                        : <Link to="/login">
+                          <NavItem  onClick={()=>{loginOut(loginState)}} className='right'>退出</NavItem>
+                          </Link>
+                        }
                         <SearchWrapper>
                         <CSSTransition
                         in={focused}
@@ -99,6 +107,7 @@ const mapStateToProps=(state)=>{
       mouthIn:state.getIn(['header','mouthIn']),
       page:state.getIn(['header','page']),
       totalPage:state.getIn(['header','totalPage']),
+      loginState:state.getIn(['login','loginState'])
     }
 
 }
@@ -133,6 +142,9 @@ const mapDispatchToProps=(dispatch)=>{
                 dispatch(actionCreators.getPageChange(1))
             }
            
+        },
+        loginOut(){
+            dispatch(loginActionCreators.loginOut())
         }
     }
 }

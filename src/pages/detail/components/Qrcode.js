@@ -1,19 +1,36 @@
 import React,{PureComponent} from 'react'; 
-import {QrcodeWrapper, AppPic} from '../style';
+import {QrcodeWrapper, AppPic,CloseBtn} from '../style';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import { actionCreators } from '../store';
+
 class Qrcode extends PureComponent{
     render(){
+        const {handleClose,onClose}=this.props;
         return (
-            <QrcodeWrapper>
-                <Link  to="https://www.jianshu.com/apps">
-                
-                <AppPic>
-                    <span className="iconfont">&#xe608;</span>
-                </AppPic>
-                </Link>
-            </QrcodeWrapper>
+                onClose? null:  <QrcodeWrapper>
+                                    <Link  to="/writer">
+                                        <AppPic/>
+                                    </Link>
+                                    <CloseBtn  onClick={()=>handleClose(onClose)}
+                                            className="iconfont hover">&#xe608;</CloseBtn>
+                                </QrcodeWrapper>  
         )
         
     }
 }
-export default Qrcode;
+
+const mapStateToProps=(state)=>({
+    onClose:state.getIn(['detail','onClose']),
+})
+
+const mapDispatchToProps=(dispatch)=>({
+    handleClose(onClose){
+        if(!onClose){
+            dispatch(actionCreators.changeCloseOn(onClose))
+        }
+        
+    }
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Qrcode);
