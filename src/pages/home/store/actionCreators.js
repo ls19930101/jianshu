@@ -21,7 +21,7 @@ export const loadMoreInfo=(page)=>({
 
 export const changeMoreInfo=(list,nextPage)=>({
     type:constants.CHANGE_MORE_INFO,
-    list:list.articleList,
+    list:list.articleList.filter(item=>item.page===nextPage),
     nextPage
 })
 

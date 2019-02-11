@@ -20,7 +20,7 @@ function* loadMoreInfo(page){
         // console.log(page.page);
         const res= yield axios.get('api/homeList.json?page='+page.page);
         const more=res.data.data;
-        console.log(more,page);
+        // console.log(more.articleList.filter(item=>item.page===1));  //测试过滤掉page=2的数据
         const action=actionCreators.changeMoreInfo(more,page.page+1);
         yield put(action);
     }catch(e){

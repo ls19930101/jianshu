@@ -18,6 +18,7 @@ class Detail extends PureComponent{
     }
 
     componentDidMount(){
+        //将
         this.props.changeDetailData(this.props.match.params.id);
     }
 }

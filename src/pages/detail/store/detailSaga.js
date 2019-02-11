@@ -5,7 +5,6 @@ import axios from 'axios';
 
 function* getDetailInfo(id){
     try{
-        
        const res= yield axios.get('/api/detail.json?id='+id.id);
        const detail=res.data.data;
        const action=actionCreators.changeDetailInfo(detail);

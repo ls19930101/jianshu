@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Detail from './pages/detail';
 import Writer from './pages/writer';
 import Login from './pages/login';
+import Download from './pages/download';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
              <Route exact path='/' component={Home}></Route>
               <Route exact path='/writer' component={Writer}></Route>
               <Route exact path='/detail/:id' component={Detail}></Route>
+              <Route exact path='/download' component={Download}></Route>
             </div>
           </BrowserRouter>
       </Provider>

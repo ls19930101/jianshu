@@ -70,7 +70,7 @@ class Header extends PureComponent{
                         <Link to="/login">
                          <NavItem className='right'>登录</NavItem>
                         </Link>
-                        : <Link to="/login">
+                        : <Link to="/">
                           <NavItem  onClick={()=>{loginOut(loginState)}} className='right'>退出</NavItem>
                           </Link>
                         }

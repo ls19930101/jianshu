@@ -20,14 +20,13 @@ export default (state=defaultState,action)=>{
         )
         
         case constants.CHANGE_MORE_INFO:
-      
-        return state.merge({
+         return state.merge({
             articleList:state.get('articleList').concat(fromJS(action.list)),
             articlePage:action.nextPage
         })
 
         case constants.SHOW_SCROLL_TOP:
-        return state.set('showScrollTop',action.show)
+         return state.set('showScrollTop',action.show)
        
        default:
        return state;
