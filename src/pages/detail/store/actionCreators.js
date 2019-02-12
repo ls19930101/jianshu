@@ -5,9 +5,10 @@ export const getDetailInfo=(id)=>({
  id
 })
 
-export const changeDetailInfo=(detailNews)=>({
+export const changeDetailInfo=(newTitle,newContent)=>({
     type:constants.CHANGE_DETAIL_INFO,
-    title:detailNews.title
+    title:newTitle,
+    content:newContent
 })
 
 export const changeCloseOn=(onClose)=>({

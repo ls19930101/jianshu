@@ -8,7 +8,7 @@ import { actionCreators } from '../detail/store';
 class Detail extends PureComponent{
     
     render(){
-        // console.log(this.props.match.params.id);
+       
         return (
            <div>
                 <Info/>
@@ -19,6 +19,7 @@ class Detail extends PureComponent{
 
     componentDidMount(){
         //将
+        //  console.log(this.props.match.params.id);
         this.props.changeDetailData(this.props.match.params.id);
     }
 }
@@ -28,8 +29,9 @@ const mapStateToProps=(state)=>({
 })
 
 const mapDispatchToProps=(dispatch)=>({
-    changeDetailData(id){
-        const action=actionCreators.getDetailInfo(id);
+    changeDetailData(homeId){
+        console.log(homeId);
+        const action=actionCreators.getDetailInfo(homeId);
         dispatch(action);
     }
     

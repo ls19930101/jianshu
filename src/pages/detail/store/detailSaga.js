@@ -3,11 +3,18 @@ import {constants,actionCreators} from './index';
 import axios from 'axios';
 
 
-function* getDetailInfo(id){
+function* getDetailInfo(homeId){
     try{
-       const res= yield axios.get('/api/detail.json?id='+id.id);
-       const detail=res.data.data;
-       const action=actionCreators.changeDetailInfo(detail);
+        console.log(homeId);
+       const res= yield axios.get('/api/detail.json?id='+homeId.id);
+       const num=parseInt(homeId.id);
+    //    console.log(typeof(num));
+       const detail=res.data.data.filter(item=>item.id===num);
+        const newTitle=detail.map(item=>item.title);
+        // console.log(newTitle);
+        const newContent=detail.map(item=>item.content);
+        // console.log(newContent);
+       const action=actionCreators.changeDetailInfo(newTitle,newContent);
         yield put(action);
     }catch(e){
         alert('网络异常，请重新获取');
