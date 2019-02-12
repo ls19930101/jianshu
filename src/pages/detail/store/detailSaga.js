@@ -9,6 +9,7 @@ function* getDetailInfo(homeId){
        const res= yield axios.get('/api/detail.json?id='+homeId.id);
        const num=parseInt(homeId.id);
     //    console.log(typeof(num));
+    //将父页面的id传入，并通过id值筛选显示不同的详情，完成与后台数据联动
        const detail=res.data.data.filter(item=>item.id===num);
         const newTitle=detail.map(item=>item.title);
         // console.log(newTitle);

@@ -18,7 +18,7 @@ class Detail extends PureComponent{
     }
 
     componentDidMount(){
-        //将
+        //将首页获取的id值与path中id对应起来，并将id值传给子页面
         //  console.log(this.props.match.params.id);
         this.props.changeDetailData(this.props.match.params.id);
     }
