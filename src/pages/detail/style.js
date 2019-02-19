@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import wujiaoPic from '../../statics/wujiao.png';
-import appPic from '../../statics/AppPic.png'
+import appPic from '../../statics/AppPic.png';
 
 export const InfoWrapper=styled.div`
 margin:0 auto;
