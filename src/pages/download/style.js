@@ -28,6 +28,11 @@ float:left;
 padding-left:12px;
 padding-right:12px;
 margin-bottom:24px;
+width:25%;
+float:left;
+padding-left:12px;
+padding-right:12px;
+margin-bottom:24px;
 .info{
     background-color:#fff;
     height:200px;

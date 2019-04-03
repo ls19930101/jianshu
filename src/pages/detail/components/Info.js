@@ -24,7 +24,7 @@ class Info extends PureComponent{
                     </AvatarPic>
                   </Link>
                 <WriterInfo>
-                    <Link className="name" to="/">李弯湾</Link>
+                    <Link className="name" to="/writer">李弯湾</Link>
                     <img className="wujiaoPic" alt="" src="../../statics/wujiao.png"></img>
                     <Link className="attention" to="/">
                         <span className="iconfont">&#xe613;</span>

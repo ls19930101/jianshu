@@ -21,7 +21,7 @@ margin:30px 0 40px;
 `
 export const AvatarPic=styled.div`
 width:48px;
-display:inline-block;
+display:inline-block;    
 vertical-align:middle;
 .avatar{
     height:100%;
